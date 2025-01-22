@@ -1,0 +1,36 @@
+﻿@inject UserManager<ApplicationUser> _userManager;
+@using Microsoft.AspNetCore.Identity
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - crud2</title>
+    <script type="importmap"></script>
+    @Html.Partial("admin"+"/"+"_css.cshtml")
+</head>
+<body onload="info_noti()">
+	<!--wrapper-->
+	<div class="wrapper">
+        @Html.Partial("admin"+"/"+"_sidebar.cshtml")
+		<!--start header -->
+        @Html.Partial("admin"+"/"+"_head.cshtml")
+		<!--end header -->
+		<!--start page wrapper -->
+                @RenderBody()
+		<!--end page wrapper -->
+        @Html.Partial("admin"+"/"+"_footer.cshtml")
+	</div>
+	<!--end wrapper-->
+    @Html.Partial("admin"+"/"+"_switcher.cshtml")
+    @Html.Partial("admin"+"/"+"_footer.cshtml")
+    @Html.Partial("admin"+"/"+"_js.cshtml")
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
+
+
+
+
