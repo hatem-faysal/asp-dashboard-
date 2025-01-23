@@ -1798,3 +1798,9 @@ D:\testcrud\obj\Debug\net9.0\compressed\ippuzmf8ac-9o2zyxk76e.gz
 D:\testcrud\obj\Debug\net9.0\compressed\hcsflal5rc-2y415s9nyw.gz
 D:\testcrud\obj\Debug\net9.0\compressed\pk6dv04gic-ezwue1mjyr.gz
 D:\testcrud\obj\Debug\net9.0\testcrud.sourcelink.json
+D:\testcrud\bin\Debug\net9.0\en-US\testcrud.resources.dll
+D:\testcrud\obj\Debug\net9.0\testcrud.Resources.ShareResource.en-US.resources
+D:\testcrud\obj\Debug\net9.0\testcrud.csproj.GenerateResource.cache
+D:\testcrud\obj\Debug\net9.0\en-US\testcrud.resources.cs
+D:\testcrud\obj\Debug\net9.0\en-US\testcrud.resources.dll
+D:\testcrud\obj\Debug\net9.0\testcrud.Resources.ShareResource.ar-AR.resources

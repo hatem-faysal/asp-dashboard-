@@ -1,14 +1,20 @@
 ﻿@inject UserManager<ApplicationUser> _userManager;
 @using Microsoft.AspNetCore.Identity
+@using System.Globalization
 
 <!DOCTYPE html>
-<html lang="en">
+@* <html lang="en"> *@
+<html lang="@CultureInfo.CurrentCulture.TwoLetterISOLanguageName" dir="@(CultureInfo.CurrentCulture.TextInfo.IsRightToLeft ? "rtl" : "ltr")">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - crud2</title>
     <script type="importmap"></script>
-    @Html.Partial("admin"+"/"+"_css.cshtml")
+    @if(Thread.CurrentThread.CurrentUICulture.Name == "en-US"){
+        @Html.Partial("admin"+"/"+"_css.cshtml")
+    }else{
+        @Html.Partial("admin"+"/"+"_css_ar.cshtml")
+    }    
 </head>
 <body onload="info_noti()">
 	<!--wrapper-->
@@ -25,7 +31,11 @@
 	<!--end wrapper-->
     @Html.Partial("admin"+"/"+"_switcher.cshtml")
     @Html.Partial("admin"+"/"+"_footer.cshtml")
-    @Html.Partial("admin"+"/"+"_js.cshtml")
+    @if(Thread.CurrentThread.CurrentUICulture.Name == "en-US"){
+        @Html.Partial("admin"+"/"+"_js.cshtml")
+    }else{
+        @Html.Partial("admin"+"/"+"_js_ar.cshtml")
+    }        
     @await RenderSectionAsync("Scripts", required: false)
 
 </body>

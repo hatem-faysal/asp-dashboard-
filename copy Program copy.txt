@@ -1,40 +1,10 @@
-using System.Globalization;
-using System.Reflection;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using testcrud.Data;
 using testcrud.Models;
-using testcrud.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-#region Localization
-
-//Step 1
-builder.Services.AddSingleton<LanguageService>();
-builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
-builder.Services.AddMvc().AddViewLocalization().AddDataAnnotationsLocalization(options => {
-    options.DataAnnotationLocalizerProvider = (type, factory) => {
-        var assemblyName = new AssemblyName(typeof(SharedResource).GetTypeInfo().Assembly.FullName);
-        return factory.Create("ShareResource", assemblyName.Name);
-    };
-});
-
-builder.Services.Configure<RequestLocalizationOptions>(options => {
-    var supportedCultures = new List<CultureInfo> {
-        new CultureInfo("ar-AR"),
-        new CultureInfo("en-US")
-    };
-    options.DefaultRequestCulture = new RequestCulture(culture: "ar-AR", uiCulture: "ar-AR");
-    options.SupportedCultures = supportedCultures;
-    options.SupportedUICultures = supportedCultures;
-    options.RequestCultureProviders.Insert(0, new QueryStringRequestCultureProvider());
-});
-#endregion
 
 builder.Services.AddDbContext<EcommerceDbContext>(op =>
 op.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -65,8 +35,6 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-//Step 2
-app.UseRequestLocalization(app.Services.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value);
 app.UseRouting();
 
 app.UseAuthentication();
