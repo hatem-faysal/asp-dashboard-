@@ -51,6 +51,11 @@ builder.Services.AddAuthentication(options =>
     options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
 
 });
+
+builder.Services.ConfigureApplicationCookie(config=>{
+    config.LoginPath="/admin/login";
+});
+
 builder.Services.AddAuthorization();
 
 

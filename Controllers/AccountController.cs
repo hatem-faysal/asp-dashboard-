@@ -27,6 +27,7 @@ namespace testcrud.Controllers
             _signInManager = signInManager;
         }
         [HttpGet("login")]
+
         public IActionResult Login()
         {
             return View();

@@ -17,7 +17,6 @@ namespace testcrud.Controllers
             _context = context;
             _webHost = webHost;
         }
-        // [HttpGet("home/index")]
         public IActionResult index()
         {
             var Response = _context.Products.Include(x=>x.Category).ToList();
