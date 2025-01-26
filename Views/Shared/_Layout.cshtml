@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - crud2</title>
     <script type="importmap"></script>
+        @Html.Partial("admin"+"/"+"_meta.cshtml")
     @if(Thread.CurrentThread.CurrentUICulture.Name == "en-US"){
         @Html.Partial("admin"+"/"+"_css.cshtml")
     }else{
