@@ -55,11 +55,8 @@ namespace testcrud.Data
                 #region User
                 var userManager =
                     applicationservices.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
-                    Console.WriteLine("good");
                 if (await userManager.FindByEmailAsync("admin@admin.com") == null)
                 {
-                    Console.WriteLine("good222");
-                    Console.WriteLine("good222");
                     var NewAdminUser = new ApplicationUser()
                     {
                         Email = "admin@admin.com",

@@ -23,6 +23,7 @@ builder.Services.AddMvc().AddViewLocalization().AddDataAnnotationsLocalization(o
         return factory.Create("ShareResource", assemblyName.Name);
     };
 });
+Console.WriteLine("ddddddddd");
 
 builder.Services.Configure<RequestLocalizationOptions>(options => {
     var supportedCultures = new List<CultureInfo> {
@@ -79,7 +80,11 @@ app.UseAuthorization();
 
 app.MapStaticAssets();
 
+Console.WriteLine("hatem");
+
 AppDbInitializer.Seed(app);
+AppDbInitializer.SeedUsersAndRolesAsync(app).Wait();
+
 
 app.MapControllerRoute(
     name: "default",
