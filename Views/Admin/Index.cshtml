@@ -63,13 +63,8 @@
 								<td>@Html.DisplayFor(x => item.Email)</td>
 								<td>
 						            <a href="" class=""></a>
-            							<a class=" btn-outline-info" asp-action="Edit" asp-controller="Category" asp-route-id="@item.Id"><i class="bx bxs-edit"></i></a>
-							<a  asp-route-id="@item.Id"><i class="fadeIn animated bx bx-message-square-x"></i>
-								<input type="submit" value="" class="btn btn-outline-danger"
-									onclick="return confirm('Are You Sure Want To Delete This Category')" 
-									/>
-							</a>            							
-						            @* <a  id="bulk_delete" class=""><i class="fadeIn animated bx bx-message-square-x"></i></a> *@
+            							<a class=" btn-outline-info" asp-action="Edit" asp-controller="Admin" asp-route-id="@item.Id"><i class="bx bxs-edit"></i></a>
+										<a  asp-route-id="@item.Id" onclick="return confirm('Are You Sure Want To Delete This Admin')" ><i class="fadeIn animated bx bx-message-square-x"></i></a>            							
 								</td>
 							</tr>
 				}		

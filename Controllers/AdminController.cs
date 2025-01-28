@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using testcrud.Data;
@@ -21,5 +22,16 @@ namespace testcrud.Controllers
             return View(Response);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var admin = await _context.ApplicationUsers.FirstOrDefaultAsync(x => x.Id == id);
+            if (admin != null)
+            {
+                return View(admin);
+            }
+            return View();
+        }
+        
     }
 }
