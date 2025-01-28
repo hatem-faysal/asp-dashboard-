@@ -15,6 +15,11 @@
         },
         "runtime": {
           "testcrud.dll": {}
+        },
+        "resources": {
+          "en-US/testcrud.resources.dll": {
+            "locale": "en-US"
+          }
         }
       },
       "Azure.Core/1.38.0": {

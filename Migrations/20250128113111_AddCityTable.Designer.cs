@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using testcrud.Data;
 
@@ -11,9 +12,11 @@ using testcrud.Data;
 namespace testcrud.Migrations
 {
     [DbContext(typeof(EcommerceDbContext))]
-    partial class EcommerceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250128113111_AddCityTable")]
+    partial class AddCityTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -304,52 +307,6 @@ namespace testcrud.Migrations
                     b.ToTable("Countries");
                 });
 
-            modelBuilder.Entity("testcrud.Models.JobRecruitment", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("JobRecruitments");
-                });
-
-            modelBuilder.Entity("testcrud.Models.JobService", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("JobServices");
-                });
-
             modelBuilder.Entity("testcrud.Models.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -405,140 +362,6 @@ namespace testcrud.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("PublicUsers");
-                });
-
-            modelBuilder.Entity("testcrud.Models.Recruitment", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int?>("Age")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("CityId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Complexion")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("ContractPeriod")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DateOfBirth")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DateOfExpiryPassport")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DateOfIssuePassport")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("EducationalQualificationsGrade")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ExperienceAlkhaleej")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ExperienceKuwait")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FullName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("General")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal?>("Height")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int?>("JobId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("LanguageArabic")
-                        .HasColumnType("int");
-
-                    b.Property<int>("LanguageEnglish")
-                        .HasColumnType("int");
-
-                    b.Property<string>("LivingTown")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("MartialStatus")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("NationalityId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("NoOfChildren")
-                        .HasColumnType("int");
-
-                    b.Property<string>("NumberPassport")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PlaceOfBirth")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PlaceOfIssuePassport")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PreviousEmploymentAbroadCountry")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("PreviousEmploymentAbroadPeriod")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Reference")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Religion")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("VendorId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Weight")
-                        .HasColumnType("int");
-
-                    b.Property<string>("WorkExperience")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CityId");
-
-                    b.HasIndex("JobId");
-
-                    b.HasIndex("NationalityId");
-
-                    b.HasIndex("VendorId");
-
-                    b.ToTable("Recruitments");
                 });
 
             modelBuilder.Entity("testcrud.Models.Vendor", b =>
@@ -689,33 +512,6 @@ namespace testcrud.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("testcrud.Models.Recruitment", b =>
-                {
-                    b.HasOne("testcrud.Models.City", "City")
-                        .WithMany()
-                        .HasForeignKey("CityId");
-
-                    b.HasOne("testcrud.Models.JobRecruitment", "JobRecruitment")
-                        .WithMany()
-                        .HasForeignKey("JobId");
-
-                    b.HasOne("testcrud.Models.Country", "Nationality")
-                        .WithMany()
-                        .HasForeignKey("NationalityId");
-
-                    b.HasOne("testcrud.Models.Vendor", "Vendor")
-                        .WithMany()
-                        .HasForeignKey("VendorId");
-
-                    b.Navigation("City");
-
-                    b.Navigation("JobRecruitment");
-
-                    b.Navigation("Nationality");
-
-                    b.Navigation("Vendor");
                 });
 
             modelBuilder.Entity("testcrud.Models.Category", b =>
