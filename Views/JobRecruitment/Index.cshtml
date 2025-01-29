@@ -52,6 +52,7 @@
 							<tr>
 				                <td>@count</td> <!-- Display the count -->
 								<td>@Html.DisplayFor(x => item.Name)</td>
+								<td>@item.CreatedAt.ToString("MM/dd/yyyy")</td>
 								<td>
 						            <a href="" class=""></a>
             							<a class=" btn-outline-info" asp-action="Edit" asp-controller="JobRecruitment" asp-route-id="@item.Id"><i class="bx bxs-edit"></i></a>

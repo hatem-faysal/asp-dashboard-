@@ -1804,3 +1804,4 @@ D:\testcrud\obj\Debug\net9.0\testcrud.csproj.GenerateResource.cache
 D:\testcrud\obj\Debug\net9.0\en-US\testcrud.resources.cs
 D:\testcrud\obj\Debug\net9.0\en-US\testcrud.resources.dll
 D:\testcrud\obj\Debug\net9.0\testcrud.Resources.ShareResource.ar-AR.resources
+D:\testcrud\obj\Debug\net9.0\compressed\shp584u2ul-0gg6fr52wn.gz

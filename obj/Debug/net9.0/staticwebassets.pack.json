@@ -7281,6 +7281,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\testcrud\\wwwroot\\js\\datatable\\JobServices.js",
+      "PackagePath": "staticwebassets\\js\\datatable\\JobServices.js"
+    },
+    {
       "Id": "D:\\testcrud\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

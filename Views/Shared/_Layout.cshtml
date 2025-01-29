@@ -3,7 +3,6 @@
 @using System.Globalization
 
 <!DOCTYPE html>
-@* <html lang="en"> *@
 <html lang="@CultureInfo.CurrentCulture.TwoLetterISOLanguageName" dir="@(CultureInfo.CurrentCulture.TextInfo.IsRightToLeft ? "rtl" : "ltr")">
 <head>
     <meta charset="utf-8" />
@@ -12,10 +11,13 @@
     <script type="importmap"></script>
         @Html.Partial("admin"+"/"+"_meta.cshtml")
     @if(Thread.CurrentThread.CurrentUICulture.Name == "en-US"){
-        @Html.Partial("admin"+"/"+"_css.cshtml")
+        @Html.Partial("admin"+"/"+"_css_en.cshtml")
     }else{
         @Html.Partial("admin"+"/"+"_css_ar.cshtml")
     }    
+        @Html.Partial("admin"+"/"+"_css.cshtml")
+
+
 </head>
 <body onload="info_noti()">
 	<!--wrapper-->
@@ -33,10 +35,13 @@
     @Html.Partial("admin"+"/"+"_switcher.cshtml")
     @Html.Partial("admin"+"/"+"_footer.cshtml")
     @if(Thread.CurrentThread.CurrentUICulture.Name == "en-US"){
-        @Html.Partial("admin"+"/"+"_js.cshtml")
+        @Html.Partial("admin"+"/"+"_js_en.cshtml")
     }else{
         @Html.Partial("admin"+"/"+"_js_ar.cshtml")
     }        
+        @Html.Partial("admin"+"/"+"_js.cshtml")
+
+	
     @await RenderSectionAsync("Scripts", required: false)
 
 </body>

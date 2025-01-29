@@ -21828,6 +21828,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Jtxf9L\u002B5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"5430"},{"Name":"Content-Type","Value":"image/x-icon"},{"Name":"ETag","Value":"\u0022Jtxf9L\u002B5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM=\u0022"},{"Name":"Last-Modified","Value":"Wed, 22 Jan 2025 12:49:47 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/testcrud/js/datatable/JobServices.0gg6fr52wn.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\datatable\JobServices.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"0gg6fr52wn"},{"Name":"integrity","Value":"sha256-QNzHG3Rtvw6EiUnqCNaFqQxN/1337IGaUspTJfnaMJc="},{"Name":"label","Value":"_content/testcrud/js/datatable/JobServices.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3034"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022QNzHG3Rtvw6EiUnqCNaFqQxN/1337IGaUspTJfnaMJc=\u0022"},{"Name":"Last-Modified","Value":"Wed, 29 Jan 2025 12:41:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/testcrud/js/datatable/JobServices.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\datatable\JobServices.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-QNzHG3Rtvw6EiUnqCNaFqQxN/1337IGaUspTJfnaMJc="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3034"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022QNzHG3Rtvw6EiUnqCNaFqQxN/1337IGaUspTJfnaMJc=\u0022"},{"Name":"Last-Modified","Value":"Wed, 29 Jan 2025 12:41:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/testcrud/js/site.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

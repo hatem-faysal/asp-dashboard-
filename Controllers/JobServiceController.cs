@@ -1,4 +1,5 @@
 ﻿
+using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using testcrud.Data;
@@ -43,6 +44,13 @@ namespace testcrud.Controllers
         }
 
 
+        
+    [HttpGet("GetList")] // Unique route for create (GET)
+        public IActionResult GetList()
+        {
+            var empList = _context.JobServices.ToList();
+            return Json(new { data = empList });
+        }
         
     [HttpGet("create")] // Unique route for create (GET)
         public IActionResult Create()
