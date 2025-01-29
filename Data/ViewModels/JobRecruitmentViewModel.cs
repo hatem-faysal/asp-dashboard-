@@ -7,6 +7,7 @@ namespace testcrud.Data.ViewModels
     {
         public List<JobRecruitment> JobRecruitments { get; set; }
         public PagingInfo PagingInfo { get; set; }
+        public string SearchTerm { get; set; } // Add this property
     }
 
 }
