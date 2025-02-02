@@ -32754,8 +32754,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>rgi7ok7yub</Fingerprint>
-      <Integrity>xc6mKfUvyz6pm+DrJmQ2a37KpaD9MhvrGOhetngA+wI=</Integrity>
+      <Fingerprint>efznicdwsh</Fingerprint>
+      <Integrity>5hq2PX3GViaC1vJ6XF9yhxiC9LsKnXNYw8STeo6y54M=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\datatable\JobServices.js'))</OriginalItemSpec>

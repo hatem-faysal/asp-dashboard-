@@ -12,6 +12,7 @@
 				<div class="btn-group" >
 					<a asp-action="Create" class="btn btn-primary mb-3 mb-lg-0"><i class="bx bxs-plus-square"></i>Create JobService</a>
 				</div>
+				<input type="hidden" value="@CultureInfo.CurrentCulture.Name" class="language"/>
 				<div class="table-responsive">
 					<table id="employeeTable" class="yajra-datatable table table-striped table-bordered" style="width:100%">	
 						<thead>

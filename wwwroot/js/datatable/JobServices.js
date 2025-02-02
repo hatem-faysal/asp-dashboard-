@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    const language =$('.language').val();
     var table = $("#employeeTable").DataTable({
         "ajax": {
             "url": "/admin/JobServices/GetList",
@@ -13,7 +14,16 @@ $(document).ready(function() {
                 }
             },
             { "data": "id", "title": "#" },
-            { "data": "name", "title": "Name" },
+            { "data": "name", "title": "Name",
+                "render": function(data) {
+                        try {
+                            var jsonObject = JSON.parse(data);  // Parse the string into a JSON object
+                            return language=="en-US"?jsonObject.en:jsonObject.ar;
+                        } catch (e) {
+                            return data;
+                        }                           
+                }            
+            },
             {
                 "data": "createdAt",
                 "title": "Created At",

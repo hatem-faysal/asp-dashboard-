@@ -29,11 +29,17 @@
 							<form asp-action="Create" class="row g-3 " >
 								<div asp-validation-summary="ModelOnly" class="text-danger"></div>	
 								<div class="col-md-4">
-									<label asp-for="Name" for="validationCustom01" class="form-label"></label>
-									<input type="text" asp-for="Name" class="form-control" id="validationCustom01" autocomplete="off"
+									<label asp-for="NameEnglish" for="validationCustom01" class="form-label"></label>
+									<input type="text" asp-for="NameEnglish" class="form-control" id="validationCustom01" autocomplete="off"
 										required>
-									<span asp-validation-for="Name" class="text-danger"></span>
+									<span asp-validation-for="NameEnglish" class="text-danger"></span>
 								</div>
+								<div class="col-md-4">
+									<label asp-for="NameArabic" for="validationCustom01" class="form-label"></label>
+									<input type="text" asp-for="NameArabic" class="form-control" id="validationCustom01" autocomplete="off"
+										required>
+									<span asp-validation-for="NameArabic" class="text-danger"></span>
+								</div>								
 								<div class="col-12">
 									<button class="btn btn-primary" type="submit">Submit form</button>
 								</div>
