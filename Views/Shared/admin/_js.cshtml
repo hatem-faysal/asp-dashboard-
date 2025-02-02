@@ -1,7 +1,5 @@
 
 @* start Toastr *@
-<!-- jQuery (Required) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <!-- Toastr JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 @* end Toastr *@
@@ -33,12 +31,6 @@ integrity="sha256-iSkyJ41luwYhZX4JnDUop92wix0y8SBGAW5tCnnCfZ4=" crossorigin="ano
         var errorMessage = '@TempData["ErrorMessage"]';
         var warningMessage = '@TempData["WarningMessage"]';
 
-            @* var errorMessages = @Html.Raw(Json.Serialize(TempData["ErrorMessages"]));
-            if (errorMessages && errorMessages.length > 0) {
-                errorMessages.forEach(function(message) {
-                    toastr.error(message, 'Validation Error');
-                });
-            } *@
             
         if (successMessage) {
             toastr.success(successMessage);

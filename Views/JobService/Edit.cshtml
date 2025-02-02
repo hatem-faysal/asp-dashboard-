@@ -5,23 +5,23 @@
 }
 <div class="page-wrapper">
 	<div class="page-content">
-		<!--breadcrumb-->
-		@await Component.InvokeAsync("TutorialMenu", new { title ="View",view = "Edit",category = "Job Services",controller = "JobService",action = "Index" ,editValue = @Model.NameEnglish })
+		<!--breadcrumb-->@CultureInfo.CurrentCulture.Name
+		@await Component.InvokeAsync("TutorialMenu", new { title ="View",view = "Edit",category = "Job Services",controller = "JobService",action = "Index" ,editValue = @CultureInfo.CurrentCulture.Name=="en-US"?@Model.NameEnglish:@Model.NameArabic })
 		<!--end breadcrumb-->
 		<div class="row">
 			<div class="col-xl-12 mx-auto">
 				<div class="card">
-					<div class="card-body">
+					<div class="">
 						<div class="p-4 border rounded">
 							<form asp-action="Edit" class="row g-3 " >
 								<div asp-validation-summary="ModelOnly" class="text-danger"></div>	
-								<div class="col-md-4">
+								<div class="col-md-6">
 									<label asp-for="NameEnglish" for="validationCustom01" class="form-label"></label>
 									<input type="text" asp-for="NameEnglish" class="form-control" id="validationCustom01" autocomplete="off"
 										required>
 									<span asp-validation-for="NameEnglish" class="text-danger"></span>
 								</div>
-								<div class="col-md-4">
+								<div class="col-md-6">
 									<label asp-for="NameArabic" for="validationCustom01" class="form-label"></label>
 									<input type="text" asp-for="NameArabic" class="form-control" id="validationCustom01" autocomplete="off"
 										required>
