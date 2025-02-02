@@ -15,7 +15,7 @@
 <head>
         @await Html.PartialAsync("~/Views/Shared/admin/_meta.cshtml")
     @if(Thread.CurrentThread.CurrentUICulture.Name == "en-US"){
-        @await Html.PartialAsync("~/Views/Shared/admin/_css.cshtml")
+        @await Html.PartialAsync("~/Views/Shared/admin/_css_en.cshtml")
     }else{
         @await Html.PartialAsync("~/Views/Shared/admin/_css_ar.cshtml")
     }    	
@@ -93,7 +93,7 @@
     </div>
 
     @if(Thread.CurrentThread.CurrentUICulture.Name == "en-US"){
-        @await Html.PartialAsync("~/Views/Shared/admin/_js.cshtml")
+        @await Html.PartialAsync("~/Views/Shared/admin/_js_en.cshtml")
     }else{
         @await Html.PartialAsync("~/Views/Shared/admin/_js_ar.cshtml")
     }  

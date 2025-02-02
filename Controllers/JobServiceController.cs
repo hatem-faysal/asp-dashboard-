@@ -1,10 +1,10 @@
 ﻿
-using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using testcrud.Data;
 using testcrud.Data.ViewModels;
 using testcrud.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace testcrud.Controllers
 {
@@ -17,6 +17,7 @@ namespace testcrud.Controllers
         {
             _context = context;
         }
+        [Authorize]
  
          [HttpGet] // This will handle GET requests to "admin/JobRecruitment"
         public IActionResult index(string searchTerm = "",int pageNumber = 1, int pageSize = 2)
@@ -58,12 +59,13 @@ namespace testcrud.Controllers
             return View();
         }
     [HttpPost("create")] // Unique route for create (POST)
-        public async Task<IActionResult> Create([Bind("Name")] JobService jobServices)
+        public async Task<IActionResult> Create(JobService jobServices)
         {
             if (ModelState.IsValid)
             {
                 await _context.JobServices.AddAsync(jobServices);
                 await _context.SaveChangesAsync();
+                TempData["SuccessMessage"] = "JobService created successfully!";
                 return RedirectToAction(nameof(Index));
             }
             return View(jobServices);
@@ -87,16 +89,22 @@ namespace testcrud.Controllers
             JobServiceId.Id = jobServices.Id;
             JobServiceId.Name = jobServices.Name;
             await _context.SaveChangesAsync();
+            TempData["SuccessMessage"] = "JobService Edit Successfully!";
             return RedirectToAction(nameof(Index));
         }
-        [HttpGet("delete/{id}")] // Unique route for delete (GET)
-        public async Task<IActionResult> Delete(int id)
-        {
-            Console.WriteLine("delete"+id);
-            var jobServicesId = await _context.JobServices.FirstOrDefaultAsync(x => x.Id == id);
-            _context.JobServices.Remove(jobServicesId);
+            [HttpDelete("delete")]
+            public async Task<IActionResult> Delete([FromBody] List<int> ids)
+            {
+                foreach (var id in ids)
+                {
+                    var jobService = await _context.JobServices.FindAsync(id);
+                    if (jobService != null)
+                    {
+                        _context.JobServices.Remove(jobService);
+                    }
+                }
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
+            return Ok(ids); // Return a success response
+            }
     }
 }
