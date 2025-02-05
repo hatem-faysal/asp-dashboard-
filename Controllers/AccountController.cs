@@ -36,25 +36,18 @@ namespace testcrud.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login(LoginVM model)
         {
-            Console.WriteLine("11");
-            // if(ModelState.IsValid)  return View(model);
             var user = await _userManager.FindByEmailAsync(model.EmailAddress);
             if (user != null)
             {
-                Console.WriteLine("222");
                 //Check Password
                 var passwordCheck = await _userManager.CheckPasswordAsync(user, model.Password);
                 if (passwordCheck)
                 {
-                    Console.WriteLine("333");
                     var Result = await _signInManager.PasswordSignInAsync(user, model.Password, false, false);
-                    Console.WriteLine("444");
                     if (Result.Succeeded)
                     {
-                        Console.WriteLine("555");
                         return RedirectToAction("Index", "Home");
                     }
-                    Console.WriteLine("666");
                 }
                 return View(model);
             }

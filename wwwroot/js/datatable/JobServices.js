@@ -13,7 +13,11 @@ $(document).ready(function() {
                     return `<input type="checkbox" name="users_checkbox[]" class="form-check-input users_checkbox" value="${data}" />`;
                 }
             },
-            { "data": "id", "title": "#" },
+            { "data": "id", "title": "Name",
+                "render": function(data, type, row, meta) {
+                    return meta.row + 1;                         
+                }
+            },            
             { "data": "name", "title": "Name",
                 "render": function(data) {
                         try {

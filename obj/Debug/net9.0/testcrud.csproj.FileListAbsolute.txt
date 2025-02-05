@@ -1801,8 +1801,9 @@ D:\testcrud\obj\Debug\net9.0\testcrud.sourcelink.json
 D:\testcrud\bin\Debug\net9.0\en-US\testcrud.resources.dll
 D:\testcrud\obj\Debug\net9.0\testcrud.Resources.ShareResource.en-US.resources
 D:\testcrud\obj\Debug\net9.0\testcrud.csproj.GenerateResource.cache
-D:\testcrud\obj\Debug\net9.0\en-US\testcrud.resources.cs
 D:\testcrud\obj\Debug\net9.0\en-US\testcrud.resources.dll
 D:\testcrud\obj\Debug\net9.0\testcrud.Resources.ShareResource.ar-AR.resources
 D:\testcrud\bin\Debug\net9.0\Newtonsoft.Json.dll
-D:\testcrud\obj\Debug\net9.0\compressed\shp584u2ul-efznicdwsh.gz
+D:\testcrud\obj\Debug\net9.0\compressed\shp584u2ul-bgbbvz5qr5.gz
+D:\testcrud\obj\Debug\net9.0\compressed\8eldlfhzl8-5b76w6fyaj.gz
+D:\testcrud\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

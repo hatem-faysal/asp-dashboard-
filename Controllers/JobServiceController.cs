@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using testcrud.Data;
-using testcrud.Data.ViewModels;
 using testcrud.Models;
 using Microsoft.AspNetCore.Authorization;
 using Newtonsoft.Json;
@@ -21,28 +20,9 @@ namespace testcrud.Controllers
         [Authorize]
 
         [HttpGet] // This will handle GET requests to "admin/JobRecruitment"
-        public IActionResult index(string searchTerm = "", int pageNumber = 1, int pageSize = 2)
+        public IActionResult index()
         {
-            var JobServices = _context.JobServices.AsQueryable();
-            // Filter based on search term
-            if (!string.IsNullOrEmpty(searchTerm))
-            {
-                JobServices = JobServices.Where(j => j.Name.Contains(searchTerm));
-            }
-            var totalJobServices = JobServices.Count();
-            var jobServicesToShow = JobServices.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
-            var viewModel = new JobServiceViewModel
-            {
-                JobServices = jobServicesToShow,
-                PagingInfo = new PagingInfo
-                {
-                    CurrentPage = pageNumber,
-                    ItemsPerPage = pageSize,
-                    TotalItems = totalJobServices
-                },
-                SearchTerm = searchTerm // Add SearchTerm to ViewModel
-            };
-            return View(viewModel);
+            return View();
         }
 
 
@@ -62,7 +42,6 @@ namespace testcrud.Controllers
         [HttpPost("create")] // Unique route for create (POST)
         public async Task<IActionResult> Create(JobService jobServices)
         {
-            Console.WriteLine(jobServices);
             if (ModelState.IsValid)
             {
 

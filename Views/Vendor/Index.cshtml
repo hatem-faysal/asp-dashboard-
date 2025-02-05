@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Vendor>
+@{
+	ViewData["title"] = "index";
+}
+<div class="page-wrapper">
+	<div class="page-content">
+		@await Component.InvokeAsync("TutorialMenu", new { category = "Vendor",view = "View",controller = "Home",action = "Index",title ="Dashboard" })
+		<div class="card">
+			<div class="card-body">
+				<div class="btn-group" >
+					<a asp-action="Create" class="btn btn-primary mb-3 mb-lg-0"><i class="bx bxs-plus-square"></i>Create JobService</a>
+				</div>
+				<input type="hidden" value="@CultureInfo.CurrentCulture.Name" class="language"/>
+				<div class="table-responsive">
+					<table id="employeeTable" class="yajra-datatable table table-striped table-bordered" style="width:100%">	
+						<thead>
+							<tr>
+								<th><input type="checkbox" class="form-check-input selectAll" id="selectAll"></th>
+								<th>#</th>
+								<th>Name</th>
+								<th>CreatedAt</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+                            <tbody></tbody>
+                            <tfoot>
+								<tr>
+									<th><input type="checkbox" class="form-check-input selectAll" id="selectAll"></th>
+									<th>#</th>
+									<th>Name</th>
+									<th>CreatedAt</th>
+									<th>Action</th>
+								</tr>
+                            </tfoot>						
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+@section Scripts{
+	<script src="~/js/datatable/Vendor.js"></script>
+}

@@ -1,0 +1,40 @@
+﻿@model Vendor
+@{
+
+	ViewData["title"] = "index";
+}
+<div class="page-wrapper">
+	<div class="page-content">
+		<!--breadcrumb-->
+		@await Component.InvokeAsync("TutorialMenu", new { title ="View",view = "Create",category = "Vendor",controller = "Vendor",action = "Index" })
+		<!--end breadcrumb-->
+		<div class="row">
+			<div class="col-xl-12 mx-auto">
+				<h6 class="mb-0 text-uppercase"></h6>
+				<div class="card">
+					<div class="">
+						<div class="p-4 border rounded">
+							<form asp-action="Create" class="row g-3 " >
+								<div asp-validation-summary="ModelOnly" class="text-danger"></div>	
+								<div class="col-md-6">
+									<label asp-for="Name" for="validationCustom01" class="form-label"></label>
+									<input type="text" asp-for="Name" class="form-control" id="validationCustom01" autocomplete="off"
+										required>
+									<span asp-validation-for="Name" class="text-danger"></span>
+								</div>								
+								<div class="col-12">
+									<button class="btn btn-primary" type="submit">Submit form</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--end row-->
+	</div>
+</div>
+
+@section Scripts{
+	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
